@@ -5,7 +5,6 @@ const urlRoutes = require('./routes/urls');
 // Create Express app
 const app = express();
 app.use(express.json());
-// app.set('base', '/');
 app.use('/api/url', urlRoutes);
 
 app.set('view engine', 'ejs');

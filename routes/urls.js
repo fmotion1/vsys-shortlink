@@ -7,7 +7,14 @@ const { nanoid } = require('nanoid');
 router.post('/shorten', async (req, res) => {
     const { originalUrl } = req.body;
     const urlCode = nanoid(10);
+    const baseURL = "http://localhost:5000"
     try {
+
+        console.log("req.body.Url:" + req.body.Url);
+        console.log("req.body.baseURL:" + req.body.baseURL);
+        console.log("req.body:" + req.body);
+        console.log("originalUrl:" + originalUrl);
+
         let url = await Url.findOne({ originalUrl });
 
         if (url) {
